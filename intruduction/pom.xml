@@ -1,0 +1,60 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>com.divae.talks.javassist</groupId>
+		<artifactId>javassist-talk-examples</artifactId>
+		<version>1.0-SNAPSHOT</version>
+	</parent>
+
+	<artifactId>intruduction</artifactId>
+
+	<name>Introduction Examples</name>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.javassist</groupId>
+			<artifactId>javassist</artifactId>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>com.github.wvengen</groupId>
+				<artifactId>proguard-maven-plugin</artifactId>
+				<executions>
+					<execution>
+						<phase>package</phase>
+						<goals>
+							<goal>proguard</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<proguardVersion>6.0</proguardVersion>
+					<options>
+						<option>-dontwarn java.**</option>
+						<option>-keep public class com.divae.talks.javassist.examples.Main { public static void main(java.lang.String[]); }</option>
+					</options>
+<!-- 						<options> -->
+<!-- 							<option>-allowaccessmodification</option> -->
+<!-- 							<option>-keep public class * extends java.applet.Applet { *; }</option> -->
+<!-- 						</options> -->
+					<libs>
+					</libs>
+				</configuration>
+				<dependencies>
+					<dependency>
+						<groupId>net.sf.proguard</groupId>
+						<artifactId>proguard-base</artifactId>
+						<version>6.0</version>
+						<scope>runtime</scope>
+					</dependency>
+				</dependencies>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>
