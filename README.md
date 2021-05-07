@@ -9,3 +9,7 @@ To use the Agent build the `agent.jar` with maven:
 ```
 
 The `agent.jar` can then be found at `agent/target/agent.jar`.
+
+## Presentation Slides
+
+The slides for the presentation in german: [Bytecode-Manipulation leicht gemacht](Bytecode-Manipulation_leicht_gemacht.pdf).
