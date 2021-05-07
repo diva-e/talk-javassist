@@ -8,12 +8,12 @@ import java.io.IOException;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
 
-public class FileBaseCacheDemo {
+ class FileBaseCacheDemo {
 
-    private final FileBasedCache cache = new FileBasedCache();
+     FileBasedCache cache = new FileBasedCache();
 
     @Test
-    public void cacheString() throws IOException, ClassNotFoundException {
+     void cacheString() throws IOException, ClassNotFoundException {
         cache.put("someId", "Hello World!");
         String result = (String) cache.get("someId");
 
@@ -30,7 +30,7 @@ public class FileBaseCacheDemo {
      * <em>-javaagent:../agent/target/agent.jar=com.divae.talks.javassist.demo.cache.AddSerializabilityTransformer</em>
      */
     @Test
-    public void cacheDataStructureWithoutSource() throws IOException, ClassNotFoundException {
+     void cacheDataStructureWithoutSource() throws IOException, ClassNotFoundException {
         DataStructure data = new DataStructure();
         data.setValue("Hello World!");
 

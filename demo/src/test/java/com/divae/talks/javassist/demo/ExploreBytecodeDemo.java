@@ -10,10 +10,10 @@ import javassist.bytecode.MethodInfo;
 import javassist.bytecode.Mnemonic;
 import org.junit.jupiter.api.Test;
 
-public class ExploreBytecodeDemo {
+class ExploreBytecodeDemo {
 
     @Test
-    public void exploreClass() throws Exception {
+    void exploreClass() throws Exception {
 
         // fetch ClassPool
         ClassPool classPool = ClassPool.getDefault();

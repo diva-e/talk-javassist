@@ -8,14 +8,14 @@ import org.junit.jupiter.api.Test;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
 
-public class ModifyBytecodeDemo {
+ class ModifyBytecodeDemo {
 
     /**
      * <em>Hint:</em> In order to successfully execute this test you need to switch
      * the fork mode in test execution of IntelliJ to method!
      */
     @Test
-    public void modifyMethods() throws Exception {
+     void modifyMethods() throws Exception {
         ClassPool classPool = ClassPool.getDefault();
         CtClass ctClass = classPool.get("com.divae.talks.javassist.demo.ModifyBytecodeDemo$Entity");
 
@@ -41,7 +41,8 @@ public class ModifyBytecodeDemo {
         assertThat(entity.toString(), is("Entity with value=42"));
     }
 
-    public static class Entity {
+
+     static class Entity {
         private int value;
 
         public int getValue() {
