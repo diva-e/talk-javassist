@@ -8,7 +8,7 @@ import javassist.bytecode.CodeAttribute;
 import javassist.bytecode.CodeIterator;
 import javassist.bytecode.MethodInfo;
 import javassist.bytecode.Mnemonic;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 public class JavassistDemo {
 

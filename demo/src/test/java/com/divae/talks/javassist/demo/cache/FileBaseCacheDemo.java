@@ -1,12 +1,12 @@
 package com.divae.talks.javassist.demo.cache;
 
 import com.divae.talks.javassist.demo.cache.closedsource.DataStructure;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
 
 import static org.hamcrest.CoreMatchers.is;
-import static org.junit.Assert.assertThat;
+import static org.hamcrest.MatcherAssert.assertThat;
 
 public class FileBaseCacheDemo {
 
