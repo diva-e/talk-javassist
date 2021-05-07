@@ -37,7 +37,7 @@
                     <proguardVersion>7.1.0-beta3</proguardVersion>
                     <options>
                         <option>-dontwarn java.**</option>
-                        <option>-keep public class com.divae.talks.javassist.examples.Main { public static void main(java.lang.String[]); }</option>
+                        <option>-keep public class com.divae.talks.javassist.examples.* { public static void main(java.lang.String[]); }</option>
                     </options>
                 </configuration>
                 <dependencies>

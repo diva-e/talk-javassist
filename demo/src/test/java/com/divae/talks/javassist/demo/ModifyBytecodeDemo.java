@@ -10,9 +10,12 @@ import static org.hamcrest.MatcherAssert.assertThat;
 
 public class ModifyBytecodeDemo {
 
+    /**
+     * <em>Hint:</em> In order to successfully execute this test you need to switch
+     * the fork mode in test execution of IntelliJ to method!
+     */
     @Test
-    public void setAndGetValues() throws Exception {
-
+    public void modifyMethods() throws Exception {
         ClassPool classPool = ClassPool.getDefault();
         CtClass ctClass = classPool.get("com.divae.talks.javassist.demo.ModifyBytecodeDemo$Entity");
 
@@ -25,7 +28,7 @@ public class ModifyBytecodeDemo {
                             f.replace("$_ = 42;");
                         }
                     } catch (NotFoundException e) {
-                        e.printStackTrace();
+                        e.printStackTrace(); // Acceptable in a demo? :-)
                     }
                 }
             });
@@ -35,7 +38,7 @@ public class ModifyBytecodeDemo {
         entity.setValue(123);
 
         assertThat(entity.getValue(), is(42));
-
+        assertThat(entity.toString(), is("Entity with value=42"));
     }
 
     public static class Entity {
@@ -47,6 +50,11 @@ public class ModifyBytecodeDemo {
 
         public void setValue(int value) {
             this.value = value;
+        }
+
+        @Override
+        public String toString() {
+            return "Entity with value=" + value;
         }
     }
 

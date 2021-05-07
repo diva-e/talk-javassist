@@ -10,23 +10,23 @@ import javassist.bytecode.MethodInfo;
 import javassist.bytecode.Mnemonic;
 import org.junit.jupiter.api.Test;
 
-public class JavassistDemo {
+public class ExploreBytecodeDemo {
 
     @Test
-    public void presentJavassist() throws Exception {
+    public void exploreClass() throws Exception {
 
         // fetch ClassPool
         ClassPool classPool = ClassPool.getDefault();
 
         // load CtClass
-        CtClass ctClass = classPool.get("com.divae.talks.javassist.demo.JavassistDemo$Point");
+        CtClass ctClass = classPool.get("com.divae.talks.javassist.demo.ExploreBytecodeDemo$Point");
 
-        System.out.println("The contains the following fields:");
+        System.out.println("## The contains the following fields:");
         for (CtField ctField : ctClass.getDeclaredFields()) {
             System.out.println(ctField);
         }
 
-        System.out.println("Opcodes of toString method:");
+        System.out.println("## Opcodes of toString method:");
         CtMethod ctMethod = ctClass.getDeclaredMethod("toString");
         MethodInfo methodInfo = ctMethod.getMethodInfo();
         CodeAttribute codeAttribute = methodInfo.getCodeAttribute();
